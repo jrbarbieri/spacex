@@ -1,24 +1,14 @@
-# README
+## Apresentação
+WebApp para visualizar todos os lançamentos da SpaceX em formato de lista.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![home](https://github.com/jrbarbieri/spacex/blob/master/docs/images/home.png)
+## Instalação
+Este app utiliza o Ruby versão 2.6.1 ou superior. Instale utilizando o [RVM](https://rvm.io/) ou similares.
 
-Things you may want to cover:
+Após, faça um `git clone` do projeto para sua máquina, abra o terminal, rode o comando `bundle install` para instalar todas as dependências e inicialize-o utilizando o comando `rails server`.
+## Teste A/B
+Este app está utilizando a gem [**split**](https://github.com/splitrb/split) para execução de testes A/B.
 
-* Ruby version
+Você pode consultar os testes no dashboard da gem, através do path `/split` uma vez que o projeto estiver disponível no `localhost:3000`.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![home](https://github.com/jrbarbieri/spacex/blob/master/docs/images/split.png)
