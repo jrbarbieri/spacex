@@ -1,8 +1,9 @@
 body {
   font-family: 'lato', sans-serif;
 }
+
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
@@ -38,6 +39,7 @@ a:hover {
     justify-content: space-between;
     margin-bottom: 25px;
   }
+
   .table-header {
     background-color: #95A5A6;
     font-size: 14px;
@@ -46,6 +48,7 @@ a:hover {
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.3);
     font-weight: bold;
   }
+
   .table-row {
     background-color: #ffffff;
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
@@ -53,15 +56,19 @@ a:hover {
       display: none;
     }
   }
+
   .col-1 {
     flex-basis: 10%;
   }
+
   .col-2 {
     flex-basis: 15%;
   }
+
   .col-3 {
     flex-basis: 75%;
   }
+
   .col-4 {
     flex-basis: 10%;
     text-align: right;
@@ -83,11 +90,11 @@ a:hover {
     li {
       display: block;
     }
+
     .col {
-
       flex-basis: 100%;
-
     }
+
     .col {
       display: flex;
       padding: 10px 0;
