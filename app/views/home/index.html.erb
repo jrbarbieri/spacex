@@ -1,0 +1,92 @@
+<div class="container">
+  <h2>Space X <small>launches</small></h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Period</div>
+      <div class="col col-2">Date</div>
+      <div class="col col-3">Description</div>
+      <div class="col col-4">Article</div>
+    </li>
+    <li class="table-row">
+      <div class="col col-1">
+        <span class="header-mobile">Period: </span> Next
+      </div>
+      <div class="col col-2">
+        <span class="header-mobile">Date: </span> <%= @launch.next_date %>
+      </div>
+      <div class="col col-3">
+        <span class="header-mobile">Description: </span> <%= @launch.next_detail %>
+      </div>
+      <div class="col col-4">
+        <span class="header-mobile">Article: </span>
+        <% if @launch.next_article.blank? %>
+          <p style="text-align:center">-</p>
+        <% else %>
+          <a href="<%= @launch.next_article %>"><%= ab_test(:articles, {'Click here!' => 0.5}, {'Go to article!' => 0.5}) %></a>
+        <% end %>
+      </div>
+    </li>
+    <li class="table-row">
+      <div class="col col-1">
+        <span class="header-mobile">Period: </span> Latest
+      </div>
+      <div class="col col-2">
+        <span class="header-mobile">Date: </span> <%= @launch.latest_date %>
+      </div>
+      <div class="col col-3">
+        <span class="header-mobile">Description: </span> <%= @launch.latest_detail %>
+      </div>
+      <div class="col col-4">
+        <span class="header-mobile">Article: </span>
+        <% if @launch.latest_article.blank? %>
+          <p style="text-align:center">-</p>
+        <% else %>
+          <a href="<%= @launch.latest_article %>"><%= ab_test(:articles, {'Click here!' => 0.5}, {'Go to article!' => 0.5}) %></a>
+        <% end %>
+      </div>
+    </li>
+    <% @launch.past.each_with_index do |element, index| %>
+      <li class="table-row">
+        <div class="col col-1">
+          <span class="header-mobile">Period: </span> Past
+        </div>
+        <div class="col col-2">
+          <span class="header-mobile">Date: </span> <%= @launch.past_date[index] %>
+        </div>
+        <div class="col col-3">
+          <span class="header-mobile">Description: </span> <%= @launch.past_detail[index] %>
+        </div>
+        <div class="col col-4">
+          <span class="header-mobile">Article: </span>
+          <% if @launch.past_article[index].blank? %>
+            <p style="text-align:center">-</p>
+          <% else %>
+            <a href="<%= @launch.past_article[index] %>"><%= ab_test(:articles, {'Click here!' => 0.5}, {'Go to article!' => 0.5}) %></a>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <% @launch.upcoming.each_with_index do |element, index| %>
+      <li class="table-row">
+        <div class="col col-1">
+          <span class="header-mobile">Period: </span> Upcoming
+        </div>
+        <div class="col col-2">
+          <span class="header-mobile">Date: </span> <%= @launch.upcoming_date[index] %>
+        </div>
+        <div class="col col-3">
+          <span class="header-mobile">Description: </span> <%= @launch.upcoming_detail[index] %>
+        </div>
+        <div class="col col-4">
+          <span class="header-mobile">Article: </span>
+          <% if @launch.upcoming_article[index].blank? %>
+            <p style="text-align:center">-</p>
+          <% else %>
+            <a href="<%= @launch.upcoming_article[index] %>"><%= ab_test(:articles, {'Click here!' => 0.5}, {'Go to article!' => 0.5}) %></a>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
