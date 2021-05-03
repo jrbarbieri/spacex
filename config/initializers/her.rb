@@ -1,4 +1,6 @@
-Her::API.setup url: "https://api.spacexdata.com/v4" do |c|
+# frozen_string_literal: true
+
+Her::API.setup url: 'https://api.spacexdata.com/v4' do |c|
   # Request
   c.use Faraday::Request::UrlEncoded
 

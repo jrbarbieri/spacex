@@ -1,0 +1,12 @@
+AllCops:
+  NewCops: enable
+
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'lib/tasks/**/*'
+
+Documentation:
+  Enabled: false
+

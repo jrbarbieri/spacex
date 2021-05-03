@@ -1,16 +1,22 @@
+# frozen_string_literal: true
+
 class LaunchPresenter
   attr_reader :launch
+
+  NO_DESCRIPTION = "Until now, Spacex hasn't provided any description."
 
   def initialize(launch)
     @launch = launch
   end
 
   def past_date
-    past.map { |launch| launch[:date_local].to_date.strftime("%d/%m/%Y")  }
+    past.map { |launch| launch[:date_local].to_date.strftime('%d/%m/%Y') }
   end
 
   def past_detail
-    past.map { |launch| launch[:details].blank? ? "Until now, Spacex hasn't provided any description." : launch[:details] }
+    past.map do |launch|
+      launch[:details].blank? ? NO_DESCRIPTION : launch[:details]
+    end
   end
 
   def past_article
@@ -18,11 +24,13 @@ class LaunchPresenter
   end
 
   def upcoming_date
-    upcoming.map { |launch| launch[:date_local].to_date.strftime("%d/%m/%Y")  }
+    upcoming.map { |launch| launch[:date_local].to_date.strftime('%d/%m/%Y') }
   end
 
   def upcoming_detail
-    upcoming.map { |launch| launch[:details].blank? ? "Until now, Spacex hasn't provided any description." : launch[:details] }
+    upcoming.map do |launch|
+      launch[:details].blank? ? NO_DESCRIPTION : launch[:details]
+    end
   end
 
   def upcoming_article
@@ -30,11 +38,11 @@ class LaunchPresenter
   end
 
   def next_date
-    next_launch[:parsed_data][:data][:date_local].to_date.strftime("%d/%m/%Y")
+    next_launch[:parsed_data][:data][:date_local].to_date.strftime('%d/%m/%Y')
   end
 
   def next_detail
-    next_launch[:parsed_data][:data][:details].blank? ? "Until now, Spacex hasn't provided any description." : next_launch[:parsed_data][:data][:details]
+    next_launch[:parsed_data][:data][:details].blank? ? NO_DESCRIPTION : next_launch[:parsed_data][:data][:details]
   end
 
   def next_article
@@ -46,11 +54,11 @@ class LaunchPresenter
   end
 
   def latest_date
-    latest[:parsed_data][:data][:date_local].to_date.strftime("%d/%m/%Y")
+    latest[:parsed_data][:data][:date_local].to_date.strftime('%d/%m/%Y')
   end
 
   def latest_detail
-    latest[:parsed_data][:data][:details].blank? ? "Until now, Spacex hasn't provided any description." : latest[:parsed_data][:data][:details]
+    latest[:parsed_data][:data][:details].blank? ? NO_DESCRIPTION : latest[:parsed_data][:data][:details]
   end
 
   def latest_article
